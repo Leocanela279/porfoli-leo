@@ -1,0 +1,113 @@
+<section id="tecnologias" class="tecnologias-section">
+  <div class="container">
+    <h2>Mi Stack tecnológico</h2>
+    <p>Estas son las tecnologías con las que trabajo habitualmente y en las que me siento cómodo desarrollando proyectos.</p>
+
+    <div class="tech-grid">
+      <!-- Vue -->
+      <div class="tech-card">
+        <svg class="tech-icon" viewBox="0 0 261.76 226.69">
+          <path fill="#41B883" d="M0 0l130.88 226.69L261.76 0H196.32L130.88 100.78 65.44 0H0z"/>
+          <path fill="#35495E" d="M65.44 0l65.44 100.78 65.44-100.78H196.32L130.88 100.78 65.44 0z"/>
+        </svg>
+        <span>Vue</span>
+      </div>
+
+      <!-- Astro -->
+      <div class="tech-card">
+        <svg class="tech-icon" viewBox="0 0 256 256">
+          <circle cx="128" cy="128" r="128" fill="#FF5D01"/>
+          <path fill="#fff" d="M128 64l44.2 128H83.8z"/>
+        </svg>
+        <span>Astro</span>
+      </div>
+
+      <!-- CSS -->
+      <div class="tech-card">
+        <svg class="tech-icon" viewBox="0 0 512 512">
+          <path fill="#264DE4" d="M71 460L30 0h452l-41 460-185 52"/>
+          <path fill="#2965F1" d="M256 472l149-41 35-392H256"/>
+          <path fill="#EBEBEB" d="M256 208h72l-6 68H256zM256 128h108l-2 20H256z"/>
+        </svg>
+        <span>CSS</span>
+      </div>
+
+      <!-- SASS -->
+      <div class="tech-card">
+        <svg class="tech-icon" viewBox="0 0 512 512">
+          <path fill="#CC6699" d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32z"/>
+        </svg>
+        <span>SASS</span>
+      </div>
+
+      <!-- MySQL -->
+      <div class="tech-card">
+        <svg class="tech-icon" viewBox="0 0 512 512">
+          <path fill="#00758F" d="M256 0C114.84 0 0 114.84 0 256s114.84 256 256 256 256-114.84 256-256S397.16 0 256 0z"/>
+        </svg>
+        <span>MySQL</span>
+      </div>
+
+      <!-- Laravel -->
+      <div class="tech-card">
+        <svg class="tech-icon" viewBox="0 0 512 512">
+          <path fill="#FF2D20" d="M32 128h448v256H32z"/>
+        </svg>
+        <span>Laravel</span>
+      </div>
+
+      <!-- PHP -->
+      <div class="tech-card">
+        <svg class="tech-icon" viewBox="0 0 512 512">
+          <path fill="#777BB4" d="M0 128h512v256H0z"/>
+        </svg>
+        <span>PHP</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .tecnologias-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .tecnologias-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: white
+    }
+    .tecnologias-section p {
+      color: white;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      align-items: center;
+    }
+    .tech-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s;
+      cursor: default;
+    }
+    .tech-card:hover {
+      transform: translateY(-5px);
+    }
+    .tech-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    .tech-card span {
+      font-weight: 500;
+      color: white
+    }
+  </style>
+</section>
