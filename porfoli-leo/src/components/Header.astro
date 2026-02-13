@@ -1,0 +1,65 @@
+---
+
+---
+
+<nav>
+    <div>
+
+        <a href="/">Home</a>
+        <a href="#projects">Proyectos</a>
+    </div>
+</nav>
+
+
+<style>
+
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+
+        & div {
+            display: flex;
+            gap: 2rem;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+    }
+
+    @media (max-width: 480px){
+        nav & div, nav div{
+            gap: 0.75rem;
+            flex-direction: row;
+        }
+
+        a{
+            padding: 0.4rem 0.4rem;
+            font-size: 0.95rem;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+        padding: 0.5rem 0.5rem;
+        transition:0.5s;
+    }
+
+    a:hover {
+        color: var(--secondary-txt-color);
+        transform: scale(1.2);
+    }
+</style>

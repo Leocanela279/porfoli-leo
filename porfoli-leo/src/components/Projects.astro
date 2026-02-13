@@ -1,0 +1,135 @@
+---
+import project1 from '../assets/project1.png';
+import project2 from '../assets/project2.png';
+import project3 from '../assets/project3.png';
+
+const projects = [
+    {
+        title: "Landing page estàtica de Noticias , desarrollada con Astro",
+        imgURL: project1.src ?? project1,
+        proyectURL: "https://leo-deploy-pages-883021.gitlab.io/ejercicio-noticias/index.html",
+        description: "Proyecto de una página de noticias creada con HTML y CSS."
+    },
+    {
+        title: "Sistema de gestión de Ligas Escolares Deportivas",
+        imgURL: project2.src ?? project2,
+        proyectURL: "#",
+        description: "Proyecto de una web para gestionar ligas escolares deportivas, utilizando HTML, CSS y JavaScript y PHP."
+    }
+    ,{
+        title:"SAAS de gestión de restaurantes",
+        imgURL: project3.src ?? project3,
+        proyectURL: "https://leo-dev.es/login",
+        description: "Proyecto SAAS Multi-Tenant para gestionar multiples restaurantes, desarrollado en Laravel"
+    },
+]
+---
+<section id="projects">
+<h2>Proyectos</h2>
+<div class="container-projects">
+    {projects.map((project) => (
+         <div class="proyecto">
+        <img src={project.imgURL} alt={project.title}>
+        <div class="project-content">
+            <h3>{project.title}</h3>
+            <p><strong>{project.description}</strong></p>
+            <a class="cv" href={project.proyectURL}  target="_blank" rel="noreferrer">Ver proyecto</a>
+        </div>
+    </div>
+    ))}
+   
+
+</div>
+
+</section>
+
+<style>
+    h2{
+        margin-bottom: 30px;
+    }
+
+.container-projects{
+    /* Force a vertical list: one project per row to avoid overlap */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    & > div{
+        padding: 20px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+.project-content a:hover{
+    background-color: rgb(69, 65, 65);
+}
+
+/* Ensure project CV-styled links keep a fixed, button-like size and don't stretch */
+.project-content .cv{
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    width: var(--btn-width); /* match the CV button width */
+}
+
+img{
+    border-radius: 20px;
+}
+
+.proyecto{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 18px;
+    transition: box-shadow 0.2s ease;
+
+    /* Remove scale transform on hover to prevent overlap; use subtle shadow instead */
+    &:hover{
+        box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+}
+
+.project-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Responsive: stack image above text on smaller screens and make images fluid */
+img{
+    /* limit image width so it doesn't encroach on adjacent content */
+    width: 360px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+@media (max-width: 700px){
+    .proyecto{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    img{ width: 100%; }
+
+    /* On small screens allow the button to shrink but keep padding */
+    .project-content .cv{
+        width: calc(var(--btn-width) - 40px); /* slightly smaller on very small screens */
+    }
+}
+
+@media (min-width: 701px){
+    .proyecto{
+        flex-direction: row;
+    }
+
+    .project-content .cv{
+        display: inline-block;
+    }
+}
+</style>

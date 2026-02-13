@@ -1,0 +1,158 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Projects from "../components/Projects.astro";
+import Gitlab from "../components/Gitlab.astro";
+import Gmail from "../components/Gmail.astro";
+---
+
+<Layout>
+	<section>
+		<div class="hero">
+			<h1>Hola soy Leandro Canela</h1>
+			<p>Un estudiante de <span>desarrollo web</span> 
+			apasionado por crear aplicaciones y experiencias digitales increíbles.
+		Siempre en búsqueda de nuevos desafíos que me permitan crecer como desarrollador 
+		y aportar valor en cada proyecto que participo.</p>
+		<div class="enlaces">
+			<a href="https://gitlab.com/leandrocanela279" target="_blank" rel="noreferrer" class="gitlab">
+			<Gitlab/>        
+		</a>
+		<a href="mailto:lagarcia@alumnat.copernic.cat" target="_blank" rel="noreferrer" class="gitlab">
+			<Gmail/>        
+		</a>
+		<a href="../../public/cvLeo.pdf" class="cv" download="cv_leandro_canela.pdf">Descargar CV</a>
+
+		</div>
+		</div>
+
+	</section>
+
+	<section class="section2">
+		<Projects/>
+	</section>
+	
+</Layout>
+
+<style>
+	p {
+		white-space: pre-line;
+		font-size: 1.2rem;
+	}
+	span:first-child{
+		color: var(--secondary-txt-color);
+	}
+	span:nth-child(2){
+		color: rgb(205, 205, 87);
+	}
+
+	h1{
+		font-size: 3rem;
+
+	}
+
+	section{
+		margin-right: 20px;
+	
+	}
+	.enlaces{
+		display: flex;
+		flex-direction: row;
+		/* align links to center baseline of the paragraph for better desktop alignment */
+		align-items: end;
+		gap: 2rem;
+		margin-top: 1rem;
+
+		& .cv{
+			text-decoration: none;
+			color: inherit;
+			border: 1px solid white;
+			border-radius: 16px;
+			padding: 10px;
+			box-shadow: 10px 5px 10px 4px rgba(49, 79, 197, 0.2);
+			transition: 0.5s ease;
+
+			&:hover{
+				background-color: rgb(69, 65, 65);
+			}
+		}
+	}
+
+	.section2{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 4rem;
+		margin-bottom: 4rem;
+	}
+	.gitlab{
+		text-decoration: none;
+		color: inherit;
+		transition: 0.5s ease;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-top: 1rem;
+	}
+
+
+.hero{
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center; 
+	/* center heading and paragraph */
+	justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero .enlaces{
+    justify-content: center; /* center the row of icons and CV button */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px){
+	h1{
+		font-size: 2rem;
+	}
+
+	p{
+		font-size: 1rem;
+	}
+
+	section{
+		margin-right: 0;
+		padding: 0 0.5rem;
+	}
+
+	.enlaces a.cv{
+		width: auto;
+	}
+}
+
+@media (max-width: 420px){
+	h1{
+		font-size: 1.6rem;
+	}
+
+	p{
+		font-size: 0.95rem;
+	}
+	.enlaces{
+		gap: 1rem;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.section2{
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+}
+
+</style>
+
+
