@@ -3,14 +3,44 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const nombre = "Leandro Canela";
+const descripcion = "Portfolio de Leandro Canela - Desarrollador web especializado en Vue, Astro, CSS, SASS, MySQL, Laravel y PHP.";
+const url = "https://porfoli-leo.vercel.app";
+const imagen = "/preview.png"; // pon una imagen representativa en /public
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título y descripción -->
     <title>Portfolio de {nombre}</title>
+    <meta name="description" content={descripcion}>
+    <meta name="author" content={nombre}>
+    <meta name="keywords" content="Portfolio, Desarrollador Web, Vue, Astro, CSS, SASS, MySQL, Laravel, PHP, Leandro Canela">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={"Portfolio de " + nombre}>
+    <meta property="og:description" content={descripcion}>
+    <meta property="og:url" content={url}>
+    <meta property="og:image" content={imagen}>
+    <meta property="og:site_name" content={nombre}>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={"Portfolio de " + nombre}>
+    <meta name="twitter:description" content={descripcion}>
+    <meta name="twitter:image" content={imagen}>
+    <meta name="twitter:site" content="@TuTwitter"> <!-- opcional -->
+    <meta name="twitter:creator" content="@TuTwitter"> <!-- opcional -->
 </head>
 <body>
     <Header/>
@@ -22,11 +52,10 @@ const nombre = "Leandro Canela";
 </html>
 
 <style is:global>
-
 :root {
    color-scheme: dark;
-    --secondary-txt-color:rgb(255, 165, 0);
-    --btn-width: 220px; /* fixed width for primary buttons */
+   --secondary-txt-color:rgb(255, 165, 0);
+   --btn-width: 220px; /* fixed width for primary buttons */
 }
 
 html {
@@ -41,8 +70,6 @@ html, body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    /* Use document flow: stretch horizontally and start vertically so content
-       doesn't vertically center in the viewport on desktop */
     align-items: stretch;
     justify-content: flex-start;
     gap: 2rem;
@@ -50,7 +77,6 @@ html, body {
 
 body{
     font-family: 'Onest Variable',  sans-serif;
-
 }
 
 .container{
@@ -62,21 +88,21 @@ body{
 }
 
 .cv{
-			text-decoration: none;
-			color: inherit;
-			border: 1px solid white;
-			border-radius: 16px;
-            padding: 10px 16px;
-            display: inline-block;
-            text-align: center;
-            width: var(--btn-width);
-			box-shadow: 10px 5px 10px 4px rgba(49, 79, 197, 0.2);
-			transition: 0.5s ease;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid white;
+    border-radius: 16px;
+    padding: 10px 16px;
+    display: inline-block;
+    text-align: center;
+    width: var(--btn-width);
+    box-shadow: 10px 5px 10px 4px rgba(49, 79, 197, 0.2);
+    transition: 0.5s ease;
+}
 
-			&:hover{
-				background-color: rgb(69, 65, 65);
-			}
-		}
+.cv:hover{
+    background-color: rgb(69, 65, 65);
+}
 
 @media (max-width: 600px){
     .container{
